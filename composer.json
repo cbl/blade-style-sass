@@ -1,0 +1,26 @@
+{
+	"name": "cbl/blade-style-sass",
+	"license": "MIT",
+	"authors": [
+		{
+			"name": "Lennart Carstens-Behrens",
+			"email": "lennart.carbe@gmail.com"
+		}
+	],
+	"require": {
+		"scssphp/scssphp": "^1.1",
+		"cbl/blade-style": "~0.2"
+	},
+	"autoload": {
+		"psr-4": {
+			"BladeStyle\\Sass\\": "src/"
+		}
+	},
+	"extra": {
+		"laravel": {
+			"providers": [
+				"BladeStyle\\Sass\\ServiceProvider"
+			]
+		}
+	}
+}
