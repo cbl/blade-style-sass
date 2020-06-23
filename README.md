@@ -1,7 +1,7 @@
 # Blade Style Sass
 
-A sass compiler for [x-style](https://github.com/cbl/blade-style) Blade
-components.
+A sass compiler eingine for [x-style](https://github.com/cbl/blade-style) Blade
+components using [scssphp](https://github.com/scssphp/scssphp).
 
 ```php
 <button class="btn">My Button</button>
@@ -21,4 +21,5 @@ The packet can be easily installed via composer.
 composer require cbl/blade-style-sass
 ```
 
-And that's it, the compiler engine is automatically registered.
+And that's it! The compiler engine is automatically registered and you are good
+to go.
