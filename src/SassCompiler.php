@@ -2,11 +2,12 @@
 
 namespace BladeStyle\Sass;
 
-use ScssPhp\ScssPhp\Compiler;
-use BladeStyle\Compiler\CssCompiler;
+use BladeStyle\Compiler\Compiler;
 use Illuminate\Filesystem\Filesystem;
+use BladeStyle\Engines\MinifierEngine;
+use ScssPhp\ScssPhp\Compiler as ScssPhp;
 
-class SassCompiler extends CssCompiler
+class SassCompiler extends Compiler
 {
     /**
      * Sass compiler.
@@ -18,17 +19,18 @@ class SassCompiler extends CssCompiler
     /**
      * Create a new compiler instance.
      *
+     * @param  \BladeStyle\Engines\MinifierEngine $engine
      * @param  \Illuminate\Filesystem\Filesystem  $files
      * @param  string  $cachePath
      * @return void
      *
      * @throws \InvalidArgumentException
      */
-    public function __construct(Filesystem $files, $cachePath)
+    public function __construct(MinifierEngine $engine, Filesystem $files, $cachePath)
     {
-        parent::__construct($files, $cachePath);
+        parent::__construct($engine, $files, $cachePath);
 
-        $this->sass = new Compiler();
+        $this->sass = new ScssPhp();
     }
 
     /**

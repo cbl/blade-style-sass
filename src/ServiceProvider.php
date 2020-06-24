@@ -30,8 +30,9 @@ class ServiceProvider extends LaravelServiceProvider
     {
         $this->app->singleton('style.compiler.sass', function () {
             return new SassCompiler(
+                $this->app['style.engine.minifier'],
                 $this->app['files'],
-                $this->app['config']['style.compiled']
+                $this->app['config']['style.compiled'],
             );
         });
     }

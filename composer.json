@@ -9,7 +9,7 @@
 	],
 	"require": {
 		"scssphp/scssphp": "^1.1",
-		"cbl/blade-style": "~0.2"
+		"cbl/blade-style": "~0.2.1"
 	},
 	"autoload": {
 		"psr-4": {
