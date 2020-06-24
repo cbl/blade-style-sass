@@ -1,6 +1,6 @@
 # Blade Style Sass
 
-A sass compiler eingine for [x-style](https://github.com/cbl/blade-style) Blade
+A sass compiler engine for [x-style](https://github.com/cbl/blade-style) Blade
 components using [scssphp](https://github.com/scssphp/scssphp).
 
 ```php
