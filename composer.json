@@ -15,12 +15,5 @@
 		"psr-4": {
 			"BladeStyle\\Sass\\": "src/"
 		}
-	},
-	"extra": {
-		"laravel": {
-			"providers": [
-				"BladeStyle\\Sass\\ServiceProvider"
-			]
-		}
 	}
 }

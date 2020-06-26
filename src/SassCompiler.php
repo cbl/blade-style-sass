@@ -35,6 +35,8 @@ class SassCompiler extends Compiler
 
     /**
      * Compile style string.
+     * 
+     * @see https://github.com/scssphp/scssphp
      *
      * @param string $style
      * @return void
