@@ -2,10 +2,13 @@
 
 namespace BladeStyle\Sass;
 
+use Illuminate\Support\Str;
 use BladeStyle\Compiler\Compiler;
 use Illuminate\Filesystem\Filesystem;
 use BladeStyle\Engines\MinifierEngine;
 use ScssPhp\ScssPhp\Compiler as ScssPhp;
+use BladeStyle\Exceptions\StyleException;
+use ScssPhp\ScssPhp\Exception\ParserException;
 
 class SassCompiler extends Compiler
 {
@@ -43,6 +46,10 @@ class SassCompiler extends Compiler
      */
     public function compileString($style)
     {
-        return $this->sass->compile($style);
+        try {
+            return $this->sass->compile($style);
+        } catch (ParserException $e) {
+            $this->throwStyleException($e, Str::between($e->getMessage(), 'line ', ','));
+        }
     }
 }
